@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; color: #222; }
+.portfolio { max-width: 1120px; margin: 0 auto; padding: 32px 12px 12px; background: #f8f8f8; text-align: center; }
+.portfolio h2 { margin: 0; font-size: 28px; }
+.portfolio h2::after { content: ""; display: block; width: 63px; height: 2px; margin: 15px auto 28px; background: #299b9b; }
+.list-tab { margin: 0 0 35px; padding: 0; list-style: none; }
+.list-tab li { display: inline-block; margin: 0 10px 10px; }
+.list-tab a { color: #555; font-size: 14px; font-weight: bold; text-decoration: none; }
+.list-tab .active, .list-tab a:hover, .list-tab a:focus-visible { color: #299b9b; }
+.galerry { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; margin: 0; padding: 8px 0 0; list-style: none; background: white; }
+.galerry img { display: block; width: 100%; height: auto; }
+@media (max-width: 650px) { .galerry { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; } }
+@media (max-width: 420px) { .galerry { grid-template-columns: 1fr; } }

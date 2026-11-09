@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 40px 20px; background: #f5f7fa; font-family: Arial, sans-serif; color: #233044; }
+main { max-width: 850px; margin: auto; text-align: center; }
+.icon-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0; margin: 32px 0; list-style: none; }
+.icon-list li { display: flex; flex-direction: column; gap: 18px; padding: 30px 12px; border: 1px solid #d9e1eb; border-radius: 8px; background: white; }
+.icon-list i { color: #007d8a; font-size: 36px; }
+a { color: #006977; }
+@media (max-width: 500px) { .icon-list { grid-template-columns: repeat(2, 1fr); } }

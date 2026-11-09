@@ -1,0 +1,122 @@
+:root {
+  --paper: #f7f6f2;
+  --ink: #243a37;
+  --green: #155e5a;
+  --muted: #69736b;
+  --line: #dedfd6;
+  --orange: #d77946;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", Arial, sans-serif; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 3px solid var(--orange); outline-offset: 6px; }
+.page { width: min(1180px, calc(100% - 80px)); margin: auto; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 112px; border-bottom: 1px solid var(--line); }
+.brand img { display: block; width: 260px; max-width: 100%; height: auto; mix-blend-mode: multiply; }
+.top-link { font-size: 14px; font-weight: 600; }
+.top-link span { margin-left: 18px; color: var(--green); font-size: 22px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 64px; align-items: center; padding: 66px 0 58px; }
+.eyebrow { margin: 0 0 15px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 1.8px; }
+.intro .eyebrow { display: flex; align-items: center; gap: 10px; }
+.intro .eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+h1 { margin: 0; font-size: clamp(38px, 4.4vw, 59px); line-height: 1.17; letter-spacing: -2.4px; font-weight: 650; }
+h1 em { color: var(--green); font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.intro-text { max-width: 445px; margin: 24px 0 27px; color: var(--muted); font-size: 15px; line-height: 1.85; }
+.primary-button { display: inline-flex; align-items: center; gap: 35px; padding: 13px 22px; border-radius: 5px; background: var(--green); color: white; font-size: 14px; font-weight: 600; transition: background .2s; }
+.primary-button:hover { background: #0c4643; }
+.primary-button span { font-size: 22px; }
+.hero-meta { display: flex; gap: 15px; align-items: center; margin-top: 30px; font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+.meta-line { width: 35px; height: 1px; background: #b5bdb2; }
+.portrait { position: relative; margin: 0 15px 0 0; }
+.portrait::before { content: ""; position: absolute; z-index: -1; inset: 20px -15px -15px 20px; border: 1px solid #bcc9b7; border-radius: 130px 10px 10px 10px; }
+.profile-photo { display: block; width: 100%; height: 380px; border-radius: 130px 10px 10px 10px; object-fit: cover; object-position: 56% center; }
+.photo-label { position: absolute; bottom: 20px; left: -23px; display: flex; align-items: center; gap: 20px; padding: 13px 17px; background: #fffdf7; box-shadow: 0 6px 22px #243a3710; font-size: 13px; border-radius: 4px; }
+.photo-label span { color: var(--orange); font-size: 25px; line-height: 1; }
+.portrait-number { position: absolute; right: 13px; top: 6px; color: white; font-family: Georgia, serif; font-size: 50px; line-height: 1.4; opacity: .85; }
+.profile { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 25px 28px; border: 1px solid var(--line); border-radius: 8px; background: #eeefe7; }
+.profile-heading { display: flex; align-items: center; gap: 17px; }
+.section-mark { color: var(--green); font-size: 40px; line-height: 1; }
+.profile .eyebrow { margin-bottom: 3px; font-size: 9px; letter-spacing: 1.4px; }
+.profile h2 { margin: 0; font-size: 18px; font-weight: 600; }
+.student-info { display: flex; gap: 35px; margin: 0; }
+.student-info dt { color: var(--muted); font-size: 11px; }
+.student-info dd { margin: 3px 0 0; font-size: 14px; font-weight: 600; }
+.social-link { display: inline-flex; gap: 15px; align-items: center; padding-bottom: 3px; border-bottom: 1px solid #a2b4a7; color: var(--green); font-size: 12px; font-weight: 600; white-space: nowrap; }
+.social-link:hover { color: #924220; }
+.assignments { padding: 64px 0 35px; }
+.section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 27px; }
+.section-heading .eyebrow { margin-bottom: 7px; }
+.section-heading h2 { margin: 0; font-size: 34px; line-height: 1.3; font-weight: 600; letter-spacing: -1px; }
+.section-heading h2 span { color: var(--orange); }
+.count { border: 1px solid var(--line); border-radius: 20px; padding: 5px 13px; color: var(--muted); font-size: 11px; }
+.exercises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 17px; margin: 0; padding: 0; list-style: none; }
+.exercises > li { min-width: 0; }
+.exercise-card { display: flex; flex-direction: column; height: 100%; padding: 22px 20px 17px; border: 1px solid var(--line); border-radius: 7px; background: #fffefa; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.exercise-card:hover { transform: translateY(-5px); border-color: #7b9c8e; box-shadow: 0 10px 25px #243a3709; }
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; }
+.card-icon { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 11px; background: #e9efdf; color: #4f6950; font-family: Georgia, serif; font-size: 27px; line-height: 1; }
+.exercises li:nth-child(3n + 2) .card-icon { background: #f6e8dc; color: #b9693e; }
+.exercises li:nth-child(3n) .card-icon { background: #e5edee; color: #40757c; }
+.card-number { color: var(--muted); font-size: 10px; letter-spacing: 1px; }
+.exercise-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; letter-spacing: -.4px; }
+.exercise-card p { margin: 0 0 24px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.card-bottom { display: flex; justify-content: space-between; align-items: center; gap: 5px; margin-top: auto; padding-top: 13px; border-top: 1px solid #ecede6; color: #6b796e; font-size: 10px; }
+.card-arrow { color: var(--green); font-size: 20px; }
+.note-card { display: flex; flex-direction: column; align-items: flex-start; padding: 22px; border-radius: 7px; background: var(--green); color: #fffdf4; }
+.note-icon { color: #e6bb82; font-size: 32px; line-height: 1; }
+.note-card h3 { margin: 19px 0 12px; font-family: Georgia, "Times New Roman", serif; font-size: 25px; line-height: 1.2; font-weight: 400; }
+.note-card p { margin: 0 0 15px; color: #d0ded4; font-size: 11px; line-height: 1.8; }
+.note-signature { margin-top: auto; font: italic 18px Georgia, serif; color: #e6bb82; }
+.assignment-notes { display: flex; flex-wrap: wrap; gap: 10px 30px; margin-top: 25px; color: var(--muted); font-size: 11px; }
+.assignment-notes p { margin: 0; }
+.assignment-notes strong { margin-right: 7px; color: #425d50; font-weight: 600; }
+footer { display: flex; justify-content: space-between; gap: 20px; padding: 23px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.footer-dot { margin: 0 9px; color: var(--orange); }
+footer a:hover { color: var(--green); }
+.sr-only, .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.skip-link:focus { position: fixed; z-index: 10; top: 10px; left: 10px; padding: 12px 18px; background: var(--green); color: white; }
+@media (min-width: 1600px) { .hero { padding-top: 80px; padding-bottom: 72px; } }
+@media (max-width: 1050px) {
+  .page { width: calc(100% - 48px); }
+  .hero { gap: 36px; }
+  .profile { flex-wrap: wrap; }
+  .student-info { margin-left: auto; }
+  .exercises { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+  .page { width: calc(100% - 36px); }
+  .topbar { min-height: 85px; gap: 15px; }
+  .brand img { width: 195px; }
+  .top-link { font-size: 11px; }
+  .top-link span { display: none; }
+  .hero { grid-template-columns: minmax(0, 1fr); padding: 38px 0; gap: 35px; }
+  h1 { font-size: 45px; letter-spacing: -2px; }
+  .intro-text { font-size: 14px; }
+  .hero-meta { margin-top: 23px; }
+  .portrait { margin: 0 12px 12px 12px; }
+  .profile-photo { height: 320px; border-top-left-radius: 95px; }
+  .photo-label { left: -12px; }
+  .profile { padding: 23px 20px; gap: 20px; }
+  .profile h2 { font-size: 17px; }
+  .student-info { width: 100%; margin: 0; padding-left: 0; justify-content: space-between; gap: 20px; }
+  .section-mark { font-size: 32px; }
+  .assignments { padding-top: 40px; }
+  .section-heading { align-items: flex-start; }
+  .section-heading h2 { font-size: 27px; }
+  .count { margin-top: 25px; font-size: 9px; white-space: nowrap; padding: 4px 8px; }
+  .exercises { gap: 12px; }
+  .exercise-card { padding: 17px 14px 13px; }
+  .exercise-card h3 { font-size: 16px; }
+  .card-top { margin-bottom: 20px; }
+  .card-number { font-size: 9px; }
+  .card-icon { width: 35px; height: 35px; font-size: 23px; }
+  .card-bottom { font-size: 9px; }
+  .note-card { padding: 18px; }
+  .note-card h3 { font-size: 24px; }
+}
+@media (max-width: 370px) { .exercises { grid-template-columns: 1fr; } .section-heading { flex-wrap: wrap; } .count { margin-top: 0; } h1 { font-size: 39px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .exercise-card, .primary-button { transition: none; } }
+
+.intro, .portrait { min-width: 0; }
+@media (max-width: 450px) { .section-heading { flex-wrap: wrap; } .count { margin-top: 0; } h1 { font-size: 39px; } .top-link { max-width: 85px; text-align: right; } }
