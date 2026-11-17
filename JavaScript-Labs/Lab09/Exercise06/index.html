@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Bài thực hành JavaScript, DOM và jQuery" />
+    <title>Exercise 9.6 — Debugging Events | JavaScript Labs</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="../../index.html">JS / LEARNING JOURNAL</a>
+      <nav>
+        <a href="../../Lab08/index.html">Lab 08</a>
+        <a href="../../Lab09/index.html">Lab 09</a>
+        <a href="../../Lab10/index.html">Lab 10</a>
+      </nav>
+    </header>
+    <main>
+      <span class="eyebrow">Lab 09 / Exercise 06</span>
+      <h1>Debugging Events</h1>
+      <p class="muted">Theo dõi e.type, e.target.id và biến cục bộ; đặt breakpoint qua DevTools.</p>
+      <section class="demo" aria-label="Kết quả bài thực hành">
+        <div class="movingDiv" id="div1" tabindex="0">This is div 1</div>
+        <div class="movingDiv" id="div2" tabindex="0">This is div 2</div>
+        <div class="movingDiv" id="div3" tabindex="0">This is div 3</div>
+        <div class="movingDiv" id="div4" tabindex="0">This is div 4</div>
+        <div class="movingDiv" id="div5" tabindex="0">This is div 5</div>
+        <p>
+          Di chuột / focus từng hộp. Trong Sources → main.js, đặt breakpoint tại dòng console.log để
+          kiểm tra e và e.target. Nhật ký dưới đây là dữ liệu sự kiện thực tế.
+        </p>
+        <pre id="debug-output">Chờ sự kiện…</pre>
+      </section>
+      <details>
+        <summary>Xem mã nguồn & cách kiểm tra</summary>
+        <p>
+          Mở
+          <a href="main.js">main.js</a>
+          và
+          <a href="index.html">index.html</a>
+          . Dùng F12 → Console / Sources để kiểm tra biến và đặt breakpoint.
+        </p>
+        <pre id="source-code"></pre>
+      </details>
+      <div class="pager">
+        <a href="../index.html">← Danh sách Lab 09</a>
+        <a href="../Exercise07/index.html">Bài tiếp theo →</a>
+      </div>
+    </main>
+    <footer>Phát triển ứng dụng TMĐT · JavaScript Labs · Lab 08 / 09 / 10</footer>
+    <script src="main.js"></script>
+    <script>
+      fetch("main.js")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("source-code").textContent = t))
+        .catch(
+          () =>
+            (document.getElementById("source-code").textContent =
+              "Mở main.js trực tiếp để đọc mã nguồn."),
+        );
+    </script>
+  </body>
+</html>
