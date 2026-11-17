@@ -1,98 +1,114 @@
-# JavaScript Labs — Phát triển ứng dụng TMĐT
+# BÀI THỰC HÀNH JAVASCRIPT
 
-## Thông tin sinh viên
+**Học phần: Phát triển ứng dụng thương mại điện tử — Chương 4**
 
-- Họ tên: **Nguyễn Linh Thùy Trang**.
-- MSSV: **31241026274**.
-- Lớp học phần: **26C1INF50902701**.
-- GitHub cá nhân: https://github.com/ngthytrang
-- Repository: https://github.com/ngthytrang/Tuan3_
-- GitHub Pages: **Chưa xác minh triển khai**.
+## 1. Thông tin sinh viên
 
-Sửa `profile.json` để cập nhật thông tin trên trang chủ. Cập nhật thông tin tại README và báo cáo Word tương ứng. Avatar hiện tại là hình đại diện mặc định bằng HTML/CSS; có thể thay bằng ảnh cá nhân. Nội dung giới thiệu và tự đánh giá là bản nháp có AI hỗ trợ: sinh viên cần đọc hiểu, chỉnh sửa theo trải nghiệm thật trước khi nộp.
+| Thông tin | Nội dung |
+| --- | --- |
+| Họ và tên | Nguyễn Linh Thùy Trang |
+| Mã số sinh viên | 31241026274 |
+| Lớp học phần | 26C1INF50902701 |
+| GitHub cá nhân | [ngthytrang](https://github.com/ngthytrang) |
+| Repository | [Tuan3_](https://github.com/ngthytrang/Tuan3_) |
 
-## Mục tiêu
+## 2. Giới thiệu và mục tiêu
 
-Hoàn thành các Exercise của Lab08, Lab09 và Lab10 theo tài liệu Fundamentals of Web Development, 2nd Ed (2017) được cung cấp; thực hành tổ chức dữ liệu, cập nhật giao diện, sự kiện, biểu mẫu và AJAX để vận dụng vào website thương mại điện tử.
+Bài thực hành gồm ba Lab về nền tảng JavaScript, thao tác DOM và xử lý sự kiện, cùng thư viện jQuery. Các bài tập tập trung vào việc xử lý dữ liệu, thay đổi nội dung trang và xây dựng chức năng tương tác trên website.
 
-## Cấu trúc
+Mục tiêu thực hiện:
+
+- Vận dụng biến, kiểu dữ liệu, cấu trúc điều khiển, hàm, mảng và đối tượng.
+- Truy xuất, tạo, sửa và xóa phần tử HTML thông qua DOM.
+- Xử lý sự kiện người dùng và kiểm tra dữ liệu biểu mẫu.
+- Sử dụng jQuery để thao tác DOM, tạo hiệu ứng và thực hiện yêu cầu GET.
+- Vận dụng vào các chức năng thương mại điện tử như kiểm tra đăng ký, tính tổng đơn hàng và xem trước ảnh sản phẩm.
+
+## 3. Nội dung các bài Lab
+
+| Bài Lab | Nội dung chính | Số Exercise | Truy cập |
+| --- | --- | --- | --- |
+| Lab 08 — Language Foundations | Script nhúng và bên ngoài, noscript, Console, String, Date, Math, mảng, hàm và đối tượng | 11 | [Lab 08](Lab08/index.html) |
+| Lab 09 — DOM and Events | Lựa chọn và thay đổi DOM, quan hệ giữa các node, sự kiện, biểu mẫu và kiểm tra dữ liệu | 8 | [Lab 09](Lab09/index.html) |
+| Lab 10 — jQuery | Cài đặt jQuery, selectors, events, chèn phần tử, animation, GET và jqXHR | 10 | [Lab 10](Lab10/index.html) |
+
+Tổng cộng **29 Exercise**, mỗi bài có trang HTML và mã JavaScript tương ứng. Lab 08 có thêm [bài Travel](Lab08/Travel/index.html), sử dụng mảng và hàm để sinh danh sách và nội dung bài viết từ dữ liệu.
+
+## 4. Cấu trúc thư mục
 
 ```text
 JavaScript-Labs/
-├── index.html                  Portfolio và liên kết 3 Lab
-├── profile.json                Thông tin cá nhân
-├── css/style.css               Giao diện chung, responsive
-├── js/main.js                  Hiển thị thông tin cá nhân
-├── js/jquery-3.1.1.min.js       Thư viện gốc kèm tài liệu
-├── assets/                     Ảnh và cờ từ bộ khởi đầu
-├── data/cities.json             Dữ liệu minh họa cho GET cùng origin
+├── index.html                  # Trang chủ giới thiệu và điều hướng
+├── README.md                   # Giới thiệu bài thực hành
+├── profile.json                # Thông tin sinh viên
+├── css/
+│   └── style.css               # Giao diện chung và responsive
+├── js/
+│   ├── main.js                 # Hiển thị thông tin trên trang chủ
+│   └── jquery-3.1.1.min.js     # Thư viện jQuery
+├── assets/
+│   ├── flags/                 # Hình ảnh cờ quốc gia
+│   └── images/                # Hình ảnh sử dụng trong bài tập
+├── data/
+│   └── cities.json            # Dữ liệu minh họa cho yêu cầu GET
 ├── Lab08/
 │   ├── index.html
-│   ├── Exercise01/ … Exercise11/  index.html và main.js mỗi bài
-│   └── Travel/                 Bài bổ sung từ exercise.html
+│   ├── Exercise01/ ... Exercise11/
+│   └── Travel/
 ├── Lab09/
-│   └── Exercise01/ … Exercise08/
+│   ├── index.html
+│   └── Exercise01/ ... Exercise08/
 └── Lab10/
-    └── Exercise01/ … Exercise10/
+    ├── index.html
+    └── Exercise01/ ... Exercise10/
 ```
 
-Một số bài thêm `hello.js` hoặc script trong `head` theo đúng kỹ thuật đang được học. Mở `index.html` của bài tương ứng để xem script nhúng. Phần xem mã nguồn trên mỗi bài hiển thị `main.js`; các tệp khác được ghi chú trong bài.
+Mỗi thư mục Exercise gồm `index.html` và `main.js`. Một số bài có thêm `hello.js`, thư mục `js/` hoặc script nhúng trong HTML theo nội dung thực hành.
 
-## Nội dung
+## 5. Hướng dẫn truy cập
 
-- **Lab08 — 11 Exercise:** bật/tắt JavaScript, script nhúng/ngoài, noscript, console, String/Date/Math, mảng và lịch 30 ngày, hàm và scope, callback tính thuế, đơn hàng và mảng Country.
-- **Lab09 — 8 Exercise:** lựa chọn DOM, quan hệ node, tạo/xóa phần tử, click/hover, load, gỡ lỗi sự kiện, focus/blur và kiểm tra biểu mẫu rỗng.
-- **Lab10 — 10 Exercise:** cài jQuery và fallback, selectors, on/off, bảy phương thức chèn DOM, fade/slide, preview ảnh, animate nối tiếp, GET và jqXHR done/fail/always.
+### Chạy trên máy tính
 
-## Chạy bài
+1. Tải mã nguồn hoặc clone repository.
+2. Mở dự án bằng Visual Studio Code.
+3. Sử dụng **Live Server** để mở `JavaScript-Labs/index.html`.
+4. Từ trang chủ, chọn Lab và Exercise cần xem.
 
-Trang chủ: `JavaScript-Labs/index.html`. Các bài: `Lab08/`, `Lab09/`, `Lab10/`.
+Nên chạy qua HTTP để các chức năng `fetch` và AJAX hoạt động đầy đủ. Khi mở trực tiếp bằng `file://`, trình duyệt có thể chặn yêu cầu đọc dữ liệu.
 
-Để chạy đầy đủ AJAX, phục vụ thư mục qua HTTP, ví dụ dùng VS Code Live Server và mở `JavaScript-Labs/index.html`. Mở bằng `file://` có thể chặn fetch và XMLHttpRequest. Trên GitHub Pages không cần cài Node hay thư viện phụ thuộc.
+### GitHub Pages
 
-Trong mỗi bài có mô tả yêu cầu, vùng kết quả tương tác, liên kết mã nguồn và điều hướng bài tiếp theo. Dùng F12 → Console/Sources để kiểm tra. Exercise 8.5 ghi một `console.error` có chủ đích đúng bài học; đây không phải lỗi JavaScript chưa được xử lý. Exercise 8.1 và 8.4 cần tắt JavaScript rồi tải lại để thấy noscript.
+Đường dẫn dự kiến theo cấu trúc repository:
 
-### GET và jqXHR
+- [Trang chủ JavaScript Labs](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/)
+- [Lab 08](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/Lab08/)
+- [Lab 09](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/Lab09/)
+- [Lab 10](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/Lab10/)
 
-Exercise 10.9–10.10 cung cấp ba lựa chọn:
+Trạng thái truy cập GitHub Pages chưa được xác minh.
 
-1. JSON cục bộ: gửi GET thật đến `data/cities.json`, không cần dịch vụ bên ngoài.
-2. Web service giáo trình: endpoint cũ được chuyển sang HTTPS để phù hợp GitHub Pages; hoạt động tùy tình trạng dịch vụ và chính sách CORS.
-3. Lỗi 404: gửi yêu cầu đến tài nguyên không tồn tại để kiểm tra nhánh lỗi.
+## 6. Kiểm tra chức năng
 
-Dữ liệu cục bộ được ghi rõ là minh họa. Không tuyên bố đã kiểm chứng khả dụng của dịch vụ giáo trình. jQuery 3.1.1 được giữ theo bộ bài học; không cần CDN cho hoạt động bình thường. Exercise 10.1 có nút thử CDN, tự trở về thư viện cục bộ khi lỗi hoặc quá thời gian.
+- **Exercise 8.1 và 8.4:** bật/tắt JavaScript rồi tải lại trang để so sánh kết quả và kiểm tra `noscript`.
+- **Exercise 8.5:** mở `F12` → Console để xem biến và các thông báo `log`, `warn`, `error` được tạo có chủ đích trong bài học.
+- **Lab 09:** thử click, di chuột, focus/blur và gửi biểu mẫu với trường rỗng hoặc đã điền đầy đủ.
+- **Lab 10:** thử các phương thức chèn phần tử, hiệu ứng fade/slide, xem trước ảnh và chuỗi animation.
+- **Exercise 10.9 và 10.10:** chọn JSON cục bộ để kiểm tra GET thành công; chọn HTTP 404 để kiểm tra xử lý lỗi. Lựa chọn dịch vụ giáo trình phụ thuộc khả năng truy cập và chính sách CORS của dịch vụ.
 
-## Đưa vào repository hiện có và triển khai GitHub Pages
+jQuery được lưu trong mã nguồn để các bài không phụ thuộc CDN khi chạy bình thường. `cities.json` là dữ liệu minh họa dùng để kiểm thử GET cùng nguồn.
 
-**Không tạo repository mới; không thay thế các bài trước.** Chỉ chép thêm thư mục `JavaScript-Labs` vào repository cũ. Chép tệp `.nojekyll` kèm theo nếu repository chưa có.
+## 7. Báo cáo và minh chứng
 
-```bash
-git add JavaScript-Labs
-git commit -m "Complete JavaScript Labs 08 09 10 and portfolio"
-git push
-```
+- Báo cáo: `31241026274_NguyenLinhThuyTrang_JavaScript_Labs.docx`.
+- Thư mục `MinhChung/` nằm cùng cấp với `JavaScript-Labs/`, chứa ảnh chụp kết quả và nhật ký kiểm thử.
+- Báo cáo trình bày nội dung từng Exercise, kết quả thực hiện, ảnh minh chứng có chú thích và tổng kết kiến thức.
 
-Nếu repository đã có GitHub Pages, giữ cấu hình hiện hành. Nếu chưa có, vào Settings → Pages → Deploy from a branch, chọn nhánh chứa bài và thư mục gốc `/ (root)`. Nếu website cũ dùng thư mục `docs` hay workflow riêng, đưa `JavaScript-Labs` vào đúng nguồn xuất bản của website cũ; không đổi cấu hình làm mất trang trước đó.
+Các bài đã được kiểm thử cục bộ trên Chrome, gồm tương tác DOM, biểu mẫu, hiệu ứng, GET thành công và thất bại. Trang chủ và các trang đại diện được kiểm tra trên kích thước màn hình máy tính và điện thoại. Ảnh minh chứng hiện có được chụp từ môi trường chạy cục bộ.
 
-URL cần điền sau khi triển khai thực tế:
+## 8. Tài liệu tham khảo
 
-```text
-https://<username>.github.io/<repository>/JavaScript-Labs/
-https://<username>.github.io/<repository>/JavaScript-Labs/Lab08/
-https://<username>.github.io/<repository>/JavaScript-Labs/Lab09/
-https://<username>.github.io/<repository>/JavaScript-Labs/Lab10/
-```
+- *Fundamentals of Web Development, 2nd Edition* — Randy Connolly và Ricardo Hoar.
+- Tài liệu thực hành `Lab08.pdf`, `Lab09.pdf`, `Lab10.pdf`.
+- Hướng dẫn bài tập cá nhân `BaiTap_CaNhan_JS.pdf`.
 
-Đề yêu cầu repository Public. Cần xác minh trạng thái Public và mở các URL thực tế trước khi nộp. Các URL mẫu trên không phải minh chứng triển khai.
-
-## Minh chứng và báo cáo
-
-Thư mục `MinhChung` cạnh thư mục mã nguồn chứa ảnh chụp thật từ Chrome khi kiểm thử cục bộ, kết quả JSON và thông tin breakpoint Exercise 9.6. Báo cáo Word tổng hợp đủ từng Exercise và chú thích ảnh. Ảnh chứng minh kết quả cục bộ, chưa chứng minh GitHub Pages.
-
-Báo cáo tạm mang tên `CHUA_CO_MSSV_CHUA_CO_HOTEN_JavaScript_Labs.docx`. Sau khi bổ sung thông tin, đổi theo `MSSV_HoTen_JavaScript_Labs.docx`.
-
-## Nguồn và kiểm tra trước khi nộp
-
-Tài nguyên và jQuery lấy từ ba ZIP giáo trình người dùng cung cấp. Mã bài làm và giao diện được triển khai dựa trên yêu cầu trong Lab08.pdf, Lab09.pdf, Lab10.pdf và BaiTap_CaNhan_JS.pdf. Bộ tài liệu gốc lưu riêng ở `TaiLieu`, không phải sản phẩm để upload thay mã nguồn.
-
-Hoàn thành thông tin cá nhân, đọc hiểu mã nguồn, chỉnh phần tự đánh giá; cập nhật repository cũ, kiểm chứng GitHub Pages; cập nhật URL thật trong báo cáo/README và đổi tên Word trước khi nộp lên LMS.
+Hình ảnh và thư viện jQuery được lấy từ các bộ mã nguồn khởi đầu đi kèm tài liệu thực hành.
