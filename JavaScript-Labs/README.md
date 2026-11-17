@@ -78,14 +78,13 @@ Nên chạy qua HTTP để các chức năng `fetch` và AJAX hoạt động đ�
 
 ### GitHub Pages
 
-Đường dẫn dự kiến theo cấu trúc repository:
+Đường dẫn GitHub Pages:
 
 - [Trang chủ JavaScript Labs](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/)
 - [Lab 08](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/Lab08/)
 - [Lab 09](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/Lab09/)
 - [Lab 10](https://ngthytrang.github.io/Tuan3_/JavaScript-Labs/Lab10/)
 
-Trạng thái truy cập GitHub Pages chưa được xác minh.
 
 ## 6. Kiểm tra chức năng
 
@@ -97,13 +96,9 @@ Trạng thái truy cập GitHub Pages chưa được xác minh.
 
 jQuery được lưu trong mã nguồn để các bài không phụ thuộc CDN khi chạy bình thường. `cities.json` là dữ liệu minh họa dùng để kiểm thử GET cùng nguồn.
 
-## 7. Báo cáo và minh chứng
+## 7. Phạm vi bàn giao
 
-- Báo cáo: `31241026274_NguyenLinhThuyTrang_JavaScript_Labs.docx`.
-- Thư mục `MinhChung/` nằm cùng cấp với `JavaScript-Labs/`, chứa ảnh chụp kết quả và nhật ký kiểm thử.
-- Báo cáo trình bày nội dung từng Exercise, kết quả thực hiện, ảnh minh chứng có chú thích và tổng kết kiến thức.
-
-Các bài đã được kiểm thử cục bộ trên Chrome, gồm tương tác DOM, biểu mẫu, hiệu ứng, GET thành công và thất bại. Trang chủ và các trang đại diện được kiểm tra trên kích thước màn hình máy tính và điện thoại. Ảnh minh chứng hiện có được chụp từ môi trường chạy cục bộ.
+Bộ tệp gồm mã nguồn và README hướng dẫn chạy bài. Nội dung giới thiệu và tự đánh giá có AI hỗ trợ biên soạn.
 
 ## 8. Tài liệu tham khảo
 

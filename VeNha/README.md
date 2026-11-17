@@ -9,6 +9,6 @@ Mở index.html để xem danh sách bài làm.
 - Bài 9: trang icon Font Awesome, lưu thư viện và font trong dự án để dùng ngoại tuyến.
 - Bài 10: index.html liên kết các bài và đã có đầy đủ họ tên, MSSV, lớp, ảnh cá nhân cùng liên kết Facebook.
 
-Thư mục hiện tại đã là TUẦN 3/VeNha. Nếu cần đúng tên trên GitHub, đặt thư mục cha là Tuan3 khi tải lên để được Tuan3/VeNha/. Không cần nén file. Chưa thực hiện đăng lên GitHub vì chưa có kho đích.
+Bài làm nằm trong thư mục `VeNha/` của repository [ngthytrang/Tuan3_](https://github.com/ngthytrang/Tuan3_). Mở `VeNha/index.html` từ thư mục gốc để xem bài. Ảnh minh chứng thực hành CSS được lưu trong `Minh chứng/`.
 
 Ảnh placeholder bài 6 được dựng bằng SVG để dùng ngoại tuyến.
