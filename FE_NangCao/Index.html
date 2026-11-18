@@ -1,77 +1,111 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Danh sách bài làm</title>
+    <title>Buổi 5 | Thiết kế responsive</title>
     <style>
         * { box-sizing: border-box; }
 
         body {
             margin: 0;
-            min-height: 100vh;
-            display: grid;
-            align-items: center;
-            padding: clamp(16px, 5vw, 64px);
-            color: #16372d;
-            background: radial-gradient(ellipse at 85% 12%, #e3ebc9, transparent 55%), #f5f3e9;
-            font-family: system-ui, sans-serif;
+            color: #e9eef8;
+            background: #101827;
+            font: 1rem/1.65 system-ui, sans-serif;
         }
 
         main {
-            width: min(100%, 860px);
+            max-width: 1100px;
             margin-inline: auto;
-            padding: clamp(24px, 7vw, 76px);
-            border: 1px solid #d7ddca;
-            border-radius: 28px;
-            background: #fffdf6;
-            box-shadow: 0 24px 64px #16372d14;
+            padding: clamp(24px, 7vw, 88px) clamp(20px, 5vw, 56px);
+        }
+
+        header {
+            padding-bottom: 32px;
+            border-bottom: 1px solid #34425b;
+        }
+
+        .session {
+            margin: 0;
+            color: #87ddff;
+            font-weight: 700;
         }
 
         h1 {
-            margin: 0 0 32px;
-            font-family: Georgia, serif;
-            font-size: clamp(2.25rem, 7vw, 4.75rem);
+            margin: 8px 0 16px;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            letter-spacing: -.055em;
             line-height: 1.05;
         }
 
-        ul { margin: 0; padding: 0; list-style: none; }
-        li + li { margin-top: 12px; }
+        header p:last-child { max-width: 60ch; margin-bottom: 0; }
+        p, li { color: #c4cee0; }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            align-items: start;
+            gap: clamp(24px, 5vw, 56px);
+            margin-top: 32px;
+        }
+
+        h2 { margin: 0 0 12px; line-height: 1.25; }
+        ul { margin: 0; padding-left: 1.25rem; }
+        li + li { margin-top: 10px; }
+        code { color: #a4e8ff; }
+
+        .exercise {
+            padding: clamp(20px, 4vw, 32px);
+            border-radius: 18px;
+            border: 1px solid #34425b;
+            background: #1b2940;
+        }
+
+        .exercise p { margin: 0 0 20px; }
 
         a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 18px clamp(16px, 4vw, 28px);
-            border-radius: 16px;
-            background: #17483a;
-            color: #fffdf6;
-            font-size: 1.125rem;
-            font-weight: 650;
+            display: inline-flex;
+            gap: .65rem;
+            padding: .65rem 1rem;
+            border-radius: 8px;
+            background: #87ddff;
+            color: #101827;
+            font-weight: 700;
             text-decoration: none;
         }
 
-        a:hover { background: #215f4c; }
-        a:focus-visible { outline: 3px solid #17483a; outline-offset: 4px; }
+        a:hover { background: #b6ebff; }
+        a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 
-        a span {
-            display: grid;
-            place-items: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #dcefaa;
-            color: #16372d;
+        @media (max-width: 700px) {
+            .content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <main>
-        <h1>Danh sách bài làm</h1>
-        <ul>
-            <li><a href="./Bai1.html">Bài 1 <span aria-hidden="true">→</span></a></li>
-        </ul>
+        <header>
+            <p class="session">Buổi 5</p>
+            <h1>Thiết kế responsive</h1>
+            <p>Hôm nay mình học cách điều chỉnh bố cục và hình ảnh để trang web hiển thị phù hợp trên các kích thước màn hình và khi in.</p>
+        </header>
+
+        <div class="content">
+            <section>
+                <h2>Nội dung đã học</h2>
+                <ul>
+                    <li>Dùng <code>@media</code> để chuyển bố cục hai cột 70% và 30% thành hai khối xếp dọc khi màn hình rộng tối đa 768 px.</li>
+                    <li>Ẩn cột phải ở kích thước từ 321 đến 479 px. Khi in, ẩn cột trái và cho cột phải chiếm toàn bộ chiều rộng.</li>
+                    <li>Dùng <code>&lt;picture&gt;</code> và <code>&lt;source&gt;</code> để thay ảnh theo chiều rộng màn hình.</li>
+                </ul>
+            </section>
+
+            <section class="exercise">
+                <h2>Bài thực hành</h2>
+                <p>Mở trang mẫu và thay đổi chiều rộng cửa sổ để quan sát bố cục và hình ảnh thay đổi.</p>
+                <a href="./Bai1.html">Mở Bài 1 <span aria-hidden="true">→</span></a>
+            </section>
+        </div>
     </main>
 </body>
 </html>
