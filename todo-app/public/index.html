@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hôm nay | ToDo cá nhân</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/client.js" defer></script>
+    <script src="/tasks.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="topbar">
+            <a class="brand" href="/"><span aria-hidden="true">✓</span> ToDo cá nhân</a>
+            <nav aria-label="Điều hướng chính">
+                <button type="button" data-view="today" aria-pressed="true">Hôm nay</button>
+                <button type="button" data-view="overdue" aria-pressed="false">Quá hạn</button>
+                <button type="button" data-view="upcoming" aria-pressed="false">Sắp tới</button>
+                <button type="button" data-view="all" aria-pressed="false">Tất cả</button>
+                <a href="/thong-ke">Thống kê</a>
+            </nav>
+        </div>
+    </header>
+    <main class="frame">
+        <section class="hero">
+            <div><p class="eyebrow"><time id="today"></time></p><h1 id="view-title">Hôm nay</h1></div>
+            <button class="primary" id="add" type="button">＋ Thêm công việc</button>
+        </section>
+        <section class="panel" aria-labelledby="list-heading">
+            <div class="panel-heading"><h2 id="list-heading">Danh sách công việc</h2><p class="muted" id="summary" role="status"></p></div>
+            <div class="toolbar">
+                <label class="search"><span class="sr-only">Tìm theo tên công việc</span><input type="search" id="search" placeholder="Tìm theo tên công việc…"></label>
+                <div class="filters">
+                <label>Trạng thái<select id="filter">
+                    <option value="all">Tất cả</option><option value="pending">Chưa xong</option><option value="done">Đã hoàn thành</option>
+                </select></label>
+                <label>Danh mục<select id="category-filter">
+                    <option value="">Tất cả</option><option>Học tập</option><option>Cá nhân</option><option>Công việc</option><option>Khác</option>
+                </select></label>
+                <label>Ưu tiên<select id="priority-filter">
+                    <option value="">Tất cả</option><option value="Cao">Cao</option><option value="Vừa">Vừa</option><option value="Thấp">Thấp</option>
+                </select></label>
+                <label>Sắp xếp<select id="sort">
+                    <option value="due">Hạn gần nhất</option><option value="priority">Ưu tiên cao nhất</option>
+                </select></label>
+                </div>
+                <button id="clear-filters" type="button" hidden>Xóa bộ lọc</button>
+            </div>
+            <div class="daily-progress" id="daily-progress" hidden>
+                <label for="progress" id="progress-label"></label>
+                <progress id="progress" value="0" max="1"></progress>
+            </div>
+            <p class="notice success" id="feedback" role="status" hidden></p>
+            <ul class="tasks" id="tasks"></ul>
+            <p class="empty" id="empty" hidden></p>
+            <p class="notice" id="list-error" role="alert" hidden></p>
+            <button id="retry" type="button" hidden>Tải lại danh sách</button>
+        </section>
+    </main>
+    <dialog id="task-dialog" aria-labelledby="form-title">
+        <form id="task-form">
+            <h2 id="form-title"></h2>
+            <label>Tên công việc<input id="task-name" required maxlength="120" autofocus></label>
+            <div class="form-fields">
+                <label>Ngày đến hạn<input id="task-date" type="date" min="0001-01-01" max="9999-12-31" required></label>
+                <label>Giờ đến hạn (tùy chọn)<input id="task-time" type="time"></label>
+                <label>Danh mục<select id="task-category"><option>Học tập</option><option>Cá nhân</option><option>Công việc</option><option>Khác</option></select></label>
+                <label>Ưu tiên<select id="task-priority"><option value="Cao">Cao</option><option value="Vừa">Vừa</option><option value="Thấp">Thấp</option></select></label>
+            </div>
+            <label>Ghi chú (tùy chọn, tối đa 500 ký tự)<textarea id="task-notes" rows="3" maxlength="500"></textarea></label>
+            <p class="notice" id="form-error" role="alert" hidden></p>
+            <div class="actions">
+                <button id="cancel" type="button">Hủy</button>
+                <button class="primary" type="submit">Lưu công việc</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-message">
+        <form method="dialog">
+            <h2 id="delete-title">Xóa công việc?</h2>
+            <p id="delete-message"></p>
+            <div class="actions">
+                <button value="cancel" autofocus>Hủy</button>
+                <button class="danger" value="delete">Xóa công việc</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>

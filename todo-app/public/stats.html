@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thống kê | ToDo cá nhân</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/client.js" defer></script>
+    <script src="/stats.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="topbar">
+            <a class="brand" href="/"><span aria-hidden="true">✓</span> ToDo cá nhân</a>
+            <nav aria-label="Điều hướng chính">
+                <a href="/">Hôm nay</a>
+                <a href="/thong-ke" aria-current="page">Thống kê</a>
+            </nav>
+        </div>
+    </header>
+    <main class="frame">
+        <section class="hero"><div><p class="eyebrow">Tổng quan công việc</p><h1>Thống kê</h1></div></section>
+        <dl class="metrics" aria-label="Thống kê công việc" aria-live="polite">
+            <div class="metric"><dt>Tổng số công việc</dt><dd id="total">…</dd></div>
+            <div class="metric series-done"><dt>Đã hoàn thành</dt><dd id="done">…</dd></div>
+            <div class="metric series-pending"><dt>Chưa xong</dt><dd id="pending">…</dd></div>
+            <div class="metric metric-overdue"><dt>Quá hạn</dt><dd id="overdue">…</dd></div>
+            <div class="metric"><dt>Tỷ lệ hoàn thành</dt><dd id="completion-rate">…</dd></div>
+        </dl>
+        <p class="notice" id="stats-error" role="alert" hidden></p>
+        <figure class="panel chart-panel">
+            <figcaption class="panel-heading">
+                <div><h2>Công việc theo ngày đến hạn</h2><p class="muted">7 ngày gần nhất · Trạng thái hiện tại</p></div>
+            </figcaption>
+            <div id="chart-content" hidden>
+                <ul class="legend"><li class="series-done">Đã hoàn thành</li><li class="series-pending">Chưa xong</li></ul>
+                <ul class="chart" id="chart" aria-label="Số công việc theo ngày và trạng thái"></ul>
+            </div>
+            <p class="empty" id="chart-empty" role="status" hidden>Chưa có công việc đến hạn trong 7 ngày này.</p>
+        </figure>
+    </main>
+</body>
+</html>
