@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thực hành jQuery · LMS-UEH</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 16px/1.55 system-ui, sans-serif; color: #16333c; background: #f2f7f7; }
+    header { padding: 2.2rem max(5vw, calc((100% - 1000px)/2)); background: #08454d; color: white; }
+    h1 { margin: 0; line-height: 1.2; }
+    header p { margin-bottom: 0; }
+    main { width: min(1000px, 90%); margin: 2rem auto; }
+    .section, #lms-demo-results { padding: 1.25rem; background: white; border: 1px solid #d6e5e5; border-radius: 12px; }
+    #lms-demo-results h2, .section h2 { margin-top: 0; font-size: 1.2rem; }
+    #lms-demo-results p { font-weight: 700; color: #075b61; }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 580px; }
+    th, td { padding: .65rem; border-bottom: 1px solid #d6e5e5; text-align: left; }
+    th { background: #e1f0ef; }
+    .topics { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+    .section ul { padding-left: 1.25rem; }
+    .section li + li { margin-top: .75rem; }
+    .activity-dates { color: #4c646a; font-size: .9rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    @media (max-width: 640px) { .topics { grid-template-columns: 1fr; } }
+  </style>
+  <script defer src="../jquery.min.js"></script>
+  <script defer src="lms-ueh.js"></script>
+</head>
+<body>
+  <header>
+    <h1>jQuery cho trang LMS-UEH</h1>
+    <p>Nhóm 2 · Minh họa bằng dữ liệu môn học mẫu</p><p><a style="color:white" href="../demo.html">← Tổng hợp Nhóm 2</a></p>
+  </header>
+  <main id="region-main">
+    <section id="lms-demo-results" hidden>
+      <h2>Kết quả chạy script</h2>
+      <p></p>
+      <div class="table-scroll" role="region" aria-label="Bảng hạn nộp theo chủ đề" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Chủ đề</th><th scope="col">Có bài tập</th><th scope="col">Bài tập</th><th scope="col">Hạn nộp</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+    <h2>Dữ liệu môn học mẫu</h2>
+    <ul class="topics">
+    <li class="section">
+      <h2 class="sectionname">Tài liệu tham khảo</h2>
+      <p>Tài liệu đọc và ví dụ thực hành.</p>
+    </li>
+    <li class="section">
+      <h2 class="sectionname">Chủ đề 1 · HTML và CSS</h2>
+      <ul>
+        <li class="modtype_assign">
+          <span class="instancename">Xây dựng cấu trúc HTML<span class="sr-only"> Bài tập</span></span>
+          <div class="activity-dates"><div><strong>Đến hạn:</strong> 23/11/2026, 23:59</div></div>
+        </li>
+        <li class="modtype_assign">
+          <span class="instancename">Định dạng trang bằng CSS<span class="sr-only"> Bài tập</span></span>
+          <div class="activity-dates"><div>Due: 24/11/2026, 23:59</div></div>
+        </li>
+      </ul>
+    </li>
+    <li class="section">
+      <h2 class="sectionname">Chủ đề 2 · Responsive</h2>
+      <ul>
+        <li class="modtype_assign">
+          <span class="instancename">Thiết kế bố cục responsive<span class="sr-only"> Bài tập</span></span>
+          <div class="activity-dates"><div><strong>Đến hạn:</strong> 25/11/2026, 23:59</div></div>
+        </li>
+        <li class="modtype_assign">
+          <span class="instancename">Thực hành Media Queries<span class="sr-only"> Bài tập</span></span>
+          <div class="activity-dates"><div>Due: 26/11/2026, 23:59</div></div>
+        </li>
+      </ul>
+    </li>
+    <li class="section">
+      <h2 class="sectionname">Chủ đề 3 · jQuery</h2>
+      <ul>
+        <li class="modtype_assign">
+          <span class="instancename">jQuery cho trang LMS-UEH<span class="sr-only"> Bài tập</span></span>
+          <div class="activity-dates"><div><strong>Đến hạn:</strong> 27/11/2026, 23:59</div></div>
+        </li>
+        <li class="modtype_assign">
+          <span class="instancename">Xử lý sự kiện bằng jQuery<span class="sr-only"> Bài tập</span></span>
+          <div class="activity-dates"><div>Due: 28/11/2026, 23:59</div></div>
+        </li>
+      </ul>
+    </li>
+    </ul>
+  </main>
+</body>
+</html>
+
+
